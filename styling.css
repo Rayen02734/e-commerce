@@ -1,0 +1,467 @@
+/* styling.css */
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Poppins:wght@300;400;600&display=swap');
+
+/* Global styles and variables */
+:root {
+    --primary-color: #ff6b81;
+    --secondary-color: #7c5cf1;
+    --accent-color: #32d7f0;
+    --dark-color: #1a1a2e;
+    --light-color: #f8f9fa;
+    --text-color: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: var(--light-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Anime background elements */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(124, 92, 241, 0.15) 0%, transparent 20%),
+        radial-gradient(circle at 90% 70%, rgba(255, 107, 129, 0.15) 0%, transparent 20%),
+        radial-gradient(circle at 50% 30%, rgba(50, 215, 240, 0.1) 0%, transparent 30%);
+    z-index: -1;
+}
+
+/* Header styling */
+header {
+    background: rgba(26, 26, 46, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg,
+            transparent,
+            rgba(124, 92, 241, 0.1),
+            rgba(255, 107, 129, 0.1),
+            transparent);
+    transform: rotate(45deg);
+    animation: shine 8s infinite linear;
+    z-index: 0;
+}
+
+@keyframes shine {
+    0% {
+        left: -50%;
+    }
+
+    100% {
+        left: 150%;
+    }
+}
+
+h1 {
+    font-family: 'Comic Neue', cursive;
+    font-size: 2.8rem;
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(255, 107, 129, 0.5);
+    animation: float 6s ease-in-out infinite;
+    margin-right: 20px;
+}
+
+/* Navigation styling */
+nav {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--light-color);
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background: rgba(124, 92, 241, 0.2);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+nav a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: all 0.5s ease;
+}
+
+nav a:hover {
+    background: rgba(124, 92, 241, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(124, 92, 241, 0.4);
+}
+
+nav a:hover::before {
+    left: 100%;
+}
+
+/* Floating elements animation */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(3deg);
+    }
+}
+
+/* Section styling */
+section {
+    flex: 1;
+    max-width: 1000px;
+    margin: 0 auto 40px;
+    padding: 40px;
+    background: rgba(26, 26, 46, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Paragraph styling */
+p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 1;
+    text-align: justify;
+    line-height: 1.8;
+}
+
+/* Image styling */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 30px auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    border: 3px solid var(--secondary-color);
+    transform: perspective(800px) rotateY(0deg);
+    transition: transform 0.7s ease, box-shadow 0.7s ease;
+    position: relative;
+    z-index: 1;
+}
+
+img:hover {
+    transform: perspective(800px) rotateY(10deg);
+    box-shadow: 0 15px 35px rgba(124, 92, 241, 0.4);
+}
+
+/* Form styling */
+form {
+    margin-top: 40px;
+}
+
+fieldset {
+    border: 2px solid var(--secondary-color);
+    border-radius: 15px;
+    padding: 20px;
+    background: rgba(26, 26, 46, 0.6);
+}
+
+legend {
+    font-family: 'Comic Neue', cursive;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    padding: 0 15px;
+    text-shadow: 0 0 5px rgba(255, 107, 129, 0.5);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+tr {
+    margin-bottom: 15px;
+    display: block;
+}
+
+td {
+    padding: 10px;
+    display: block;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(124, 92, 241, 0.3);
+    background: rgba(26, 26, 46, 0.8);
+    color: var(--light-color);
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 10px rgba(50, 215, 240, 0.5);
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+input[type="submit"] {
+    background: var(--primary-color);
+    color: white;
+}
+
+input[type="reset"] {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--light-color);
+    margin-left: 10px;
+}
+
+input[type="submit"]:hover {
+    background: #ff4d6d;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 107, 129, 0.4);
+}
+
+input[type="reset"]:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+/* Footer styling */
+footer {
+    background: rgba(26, 26, 46, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 30px 20px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: auto;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.footer-center h2 {
+    font-family: 'Comic Neue', cursive;
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(255, 107, 129, 0.5);
+}
+
+.footer-right i {
+    margin: 5px 0;
+    display: inline-block;
+    color: var(--accent-color);
+    transition: all 0.3s ease;
+}
+
+.footer-right a {
+    text-decoration: none;
+    color: var(--light-color);
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.footer-right a:hover {
+    color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+.footer-right span {
+    margin-left: 8px;
+}
+
+/* Decorative elements */
+.deco-element {
+    position: absolute;
+    z-index: 0;
+    opacity: 0.7;
+}
+
+.deco-1 {
+    top: 10%;
+    right: 5%;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(5px);
+    animation: float 8s ease-in-out infinite;
+}
+
+.deco-2 {
+    bottom: 15%;
+    left: 5%;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, var(--secondary-color) 0%, transparent 70%);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    filter: blur(4px);
+    animation: float 7s ease-in-out infinite reverse;
+}
+
+.deco-3 {
+    top: 40%;
+    left: 10%;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(3px);
+    animation: float 9s ease-in-out infinite 1s;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    h1 {
+        margin-bottom: 15px;
+        margin-right: 0;
+        font-size: 2.2rem;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    section {
+        padding: 25px;
+        margin: 20px auto;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        margin: 15px 0;
+    }
+
+    .deco-1,
+    .deco-2,
+    .deco-3 {
+        display: none;
+    }
+
+    tr {
+        margin-bottom: 10px;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}

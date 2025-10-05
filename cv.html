@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Projet Anime World</title>
+    <style>
+        :root {
+            --primary-color: #ff6b81;
+            --secondary-color: #7c5cf1;
+            --accent-color: #32d7f0;
+            --dark-color: #1a1a2e;
+            --light-color: #f8f9fa;
+            --text-color: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: var(--light-color);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .cv-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(26, 26, 46, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 107, 129, 0.5);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin: 25px 0 15px;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin: 20px 0 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        li:before {
+            content: "▶";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(124, 92, 241, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .two-columns {
+                grid-template-columns: 1fr;
+            }
+
+            .cv-container {
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+        <header>
+            <h1>Projet Anime World</h1>
+            <p>Site e-commerce complet dédié à l'univers de l'anime</p>
+        </header>
+
+        <div class="section">
+            <h2>Aperçu du Projet</h2>
+            <p>Anime World est un site e-commerce complet dédié aux passionnés d'anime, proposant des listes de
+                produits, du contenu informatif et une gestion de comptes utilisateurs. Le projet démontre des
+                compétences en développement full-stack avec un accent sur l'expérience utilisateur et le design
+                responsive.</p>
+        </div>
+
+        <div class="section">
+            <h2>Compétences Techniques</h2>
+            <div class="two-columns">
+                <div>
+                    <h3>Frontend</h3>
+                    <ul>
+                        <li>HTML5 - Balisage sémantique</li>
+                        <li>CSS3 - Styles avancés et animations</li>
+                        <li>JavaScript - Validation et interactions</li>
+                        <li>Bootstrap - Composants UI</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Backend</h3>
+                    <ul>
+                        <li>PHP - Scripts côté serveur</li>
+                        <li>MySQL - Gestion de base de données</li>
+                        <li>Traitement de formulaires</li>
+                        <li>Sécurité et authentification</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Composants Développés</h2>
+            <h3>Pages Principales</h3>
+            <ul>
+                <li>Page d'accueil avec formulaire de contact</li>
+                <li>Page "À propos" avec contenu informatif</li>
+                <li>Catalogue produits avec fonctionnalité panier</li>
+                <li>Système complet d'inscription et connexion</li>
+            </ul>
+
+            <h3>Fonctionnalités Clés</h3>
+            <ul>
+                <li>Validation de formulaires côté client et serveur</li>
+                <li>Design responsive et adaptatif</li>
+                <li>Animations CSS avancées</li>
+                <li>Intégration avec base de données MySQL</li>
+                <li>Système de gestion de panier</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Détails Techniques</h2>
+            <h3>Base de Données</h3>
+            <p>Conception et implémentation d'une base de données utilisateur avec MySQL, incluant des scripts PHP pour
+                l'inscription (insertion.php) et la connexion (login.php) avec mesures de sécurité.</p>
+
+            <h3>Expérience Utilisateur</h3>
+            <p>Interface intuitive avec animations subtiles, design cohérent et navigation fluide. Le site est
+                entièrement responsive et s'adapte à toutes les tailles d'écran.</p>
+        </div>
+
+        <a href="index.html" class="project-link">Voir le projet complet</a>
+    </div>
+</body>
+
+</html>
